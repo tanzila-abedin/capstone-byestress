@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'microposts/new'
   get 'followings/new'
   get 'users/new'
   devise_for :users
