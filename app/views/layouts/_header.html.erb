@@ -1,0 +1,22 @@
+<nav class="nav">
+ <%= link_to 'Bye Stress', root_path %> <% if user_signed_in? %>
+
+ <div class="sidebar column">
+  <div class="profile-links">
+   <div>
+    <span class="material-icons">home</span>
+    <%= link_to "HOME", root_path %>
+   </div>
+   <div>
+    <span class="material-icons">person</span>
+    <%= link_to "PROFILE", user_path(current_user.id), method: :get %>
+   </div>
+  </div>
+ </div>
+ <%end %> 
+ <% if current_user %> 
+ <%= link_to 'Sign out',destroy_user_session_path, method: :delete %> 
+ <% else %> 
+ <%= link_to 'Sign in',user_session_path %> 
+ <% end %>
+</nav>
