@@ -1,8 +1,13 @@
 Rails.application.routes.draw do
   root "microposts#index"
   devise_for :users
-  resources :users, only: [:index, :show]
-
+  resources :users do
+    member do 
+     get :following, :followers
+    end
+  end
+  resources :microposts, only: [:index, :create, :new, :destroy]
+  resources :followings, only: [:create, :destroy]
 
 
   # get 'microposts/new'
