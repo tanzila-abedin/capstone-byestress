@@ -1,5 +1,28 @@
 <h1>Microposts#new</h1>
 
+<%= form_for(@micropost) do |form| %>
+  <%= form.label :content %>
+  <%= form.text_field :content, id: :post_content, class: 'form-control', placeholder: 'Add New Post' %>
+  <%= display_errors(@micropost) %>
+  <%= form.submit 'Save', class: 'btn btn-primary' %>
+<% end %>
 
-<p>Find me in app/views/microposts/new.html.erb</p>
+  <h3>
+    Recent posts
+  </h3>
+  <ul class="posts">
+    <%= render 'microposts/homepage_post' %>
+  </ul>
 
+
+<h1>who to follow</h1>
+  <% if !me?(@users)%>
+  <% @users.each do |user| %>
+    <li>
+     <p> username: <%= user.username %> </p>
+      <%= link_to 'Follow',followings_path(:following => {:followed_id => user.id}),
+                                                                    method: :post,
+                                                                     class: 'profile-link profile-link-btn' %>
+    </li>
+  <% end %>
+  <% end %>
