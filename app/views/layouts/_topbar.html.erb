@@ -1,0 +1,12 @@
+ <div class="top-bar">
+            <%# <%= image_tag "logo.jpeg", class: "main-logo" %> 
+            <div>
+            <%= link_to edit_user_registration_path(@user) do%>
+                <span class="material-icons">create</span> 
+            <% end %>
+            <span class="material-icons">local_post_office</span>
+            <span class="material-icons">search</span>
+            <span class="material-icons">settings</span>
+            <a><%= button_to "SIGNOUT", destroy_user_session_path, method: :delete, class: "special-button"%></a>
+        </div>
+</div>
