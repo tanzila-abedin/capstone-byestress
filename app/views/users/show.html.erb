@@ -1,0 +1,10 @@
+<% provide(:title, @user.fullname) %>
+<%= "name: #{@user.fullname}" %>
+    <section class="stats">
+
+    <%= render 'follow_form' if logged_in? %>
+    <% if @user.microposts.any? %>
+      <h3>Microposts (<%= @user.microposts.count %>)</h3>
+    <% end %>
+
+    
