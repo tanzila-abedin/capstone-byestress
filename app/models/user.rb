@@ -37,8 +37,12 @@ class User < ApplicationRecord
   end
 
   #returns TRUE if the current user IS following the other user
-  def follow?
+  def follow?(other_user)
     following.include?(other_user)
     #!active_followings.find_by(followed_id: other_user.id).nil?   
   end
+  #returns FALSE if the current user IS NOT following the other user
+  #   def not_follow?(other_user)
+  #    active_followings.find_by(followed_id: other_user.id).nil?   
+  # end
 end
