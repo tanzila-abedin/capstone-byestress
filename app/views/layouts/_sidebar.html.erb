@@ -1,12 +1,12 @@
  <div class="sidebar column">
   <div class="profile-links">
-   <div>
-    <span class="material-icons">home</span>
-    <%= link_to "HOME", root_path %>
+   <div class="p-3">
+   <i class="fas fa-home"></i>
+    <%= link_to "HOMEPAGE", root_path, class: "top-items" %>
    </div>
-   <div>
-    <span class="material-icons">person</span>
-    <%= link_to "PROFILE", user_path(current_user.id), method: :get %>
+   <div class="p-3">
+   <i class="fas fa-user"></i>
+    <%= link_to "PROFILE", user_path(current_user.id), method: :get, class: "top-items"  %>
    </div>
   </div>
  </div>
