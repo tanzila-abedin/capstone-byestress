@@ -1,9 +1,13 @@
 class User < ApplicationRecord
   has_many :microposts, dependent: :destroy
-  has_many :active_followings, class_name: "Following", #through association 
+
+  has_many :likes
+  has_many :liked_posts, through: :likes, source: :micropost
+
+  has_many :active_followings, class_name: "Following", 
                                foreign_key: "follower_id", 
                                dependent:   :destroy
-  has_many :passive_followings, class_name: "Following", #through association 
+  has_many :passive_followings, class_name: "Following", 
                                foreign_key: "followed_id", 
                                dependent:   :destroy
   has_many :following, through: :active_followings, source: :followed
@@ -11,8 +15,6 @@ class User < ApplicationRecord
 
 
   before_save { email.downcase! }
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
@@ -27,22 +29,15 @@ class User < ApplicationRecord
   #follows a user
   def follow(other_user)
     following << other_user unless self == other_user
-     #active_followings.create(followed_id: other_user.id)
   end
 
   #unfollows a user
   def unfollows(other_user)
     following.delete(other_user)
-    #active_followings.find_by(followed_id: other_user.id).delete
   end
 
   #returns TRUE if the current user IS following the other user
   def follow?(other_user)
-    following.include?(other_user)
-    #!active_followings.find_by(followed_id: other_user.id).nil?   
+    following.include?(other_user) 
   end
-  #returns FALSE if the current user IS NOT following the other user
-  #   def not_follow?(other_user)
-  #    active_followings.find_by(followed_id: other_user.id).nil?   
-  # end
 end
