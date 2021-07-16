@@ -1,4 +1,7 @@
-<%= form_with(model: current_user.active_followings.find_by(followed_id: @user.id),
-             html: { method: :delete }, local: true) do |f| %>
-  <%= f.submit "Unfollow", class: "special-button" %>
-<% end %>
+
+<%= link_to 'Unfollow',following_path(:following => {:followed_id => @user.id}),
+                                                                    method: :delete,
+                                                                     class: 'profile-link profile-link-btn' %> <span>
+
+
+
