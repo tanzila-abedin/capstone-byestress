@@ -22,7 +22,8 @@ class MicropostsController < ApplicationController
     @friends = Following.where(follower_id: current_user.id)
 
     @my_friends_posts = []
-    @friends.each do |friendship|
+    #n+1 query
+    @friends.includes(:follower).each do |friendship|
       user = User.find_by(id: friendship.followed_id)
       @my_friends_posts << user.microposts
     end
