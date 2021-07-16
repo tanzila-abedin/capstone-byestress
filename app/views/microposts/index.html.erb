@@ -1,28 +1,62 @@
-<h1>Microposts#new</h1>
 
-<%= form_for(@micropost) do |form| %>
+<div class="container-fluid">
+
+  <div class="row">
+  <div class="col-9">
+  <div class="card">
+  <div class="card-header">
+  <h1>Post Something</h1>
+  </div>
+   <div class="card-body">
+    <blockquote class="blockquote mb-0">
+  <%= form_for(@micropost) do |form| %>
   <%= form.label :content %>
-  <%= form.text_field :content, id: :post_content, class: 'form-control', placeholder: 'Add New Post' %>
+  <%= form.text_field :content, id: :post_content, class: 'form-control content-box', placeholder: 'Add New Post' %>
   <%= display_errors(@micropost) %>
   <%= form.submit 'Save', class: 'btn btn-primary' %>
-<% end %>
-
+  <% end %>
+  </blockquote>
+  </div>
+  </div>
   <h3>
     Recent posts
   </h3>
   <ul class="posts">
     <%= render 'microposts/homepage_post' %>
   </ul>
+</div>
 
 
-<h1>who to follow</h1>
-  <% if !me?(@users)%>
-  <% @users.each do |user| %>
-    <li>
-     <p> username: <%= user.username %> </p>
-      <%= link_to 'Follow',followings_path(:following => {:followed_id => user.id}),
-                                                                    method: :post,
-                                                                     class: 'profile-link profile-link-btn' %>
-    </li>
-  <% end %>
-  <% end %>
+
+ <div class="col">
+  <div class="row">
+    <div class="col">
+      <h4 class="text-center">Who to follow</h4>
+      <hr>
+      <% @users.each do |user| %>
+        <% unless follow?(user) ||  me?(user) %>
+          <div class="row align-items-center justify-content-center pb-3">
+            <div class='col p-0'>
+              <%= gravatar_for user%>
+            </div>
+            <div class='col p-0'>
+              <%= user.fullname %>
+            </div>
+            <div class='col p-0'>
+              <%= link_to 'Follow',followings_path(:following => {:followed_id => user.id}),
+                                                    method: :post,
+                                                    class: 'profile-link profile-link-btn' %> 
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
+  </div>
+  </div>
+</div>
+
+
+          
+          
