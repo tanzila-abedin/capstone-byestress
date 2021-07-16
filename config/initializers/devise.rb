@@ -117,17 +117,12 @@ Devise.setup do |config|
   # The number of stretches used for generating the hashed password are stored
   # with the hashed password. This allows you to change the stretches without
   # invalidating existing passwords.
-  #
   # Limiting the stretches to just one in testing will increase the performance of
   # your test suite dramatically. However, it is STRONGLY RECOMMENDED to not use
   # a value less than 10 in other environments. Note that, for bcrypt (the default
   # algorithm), the cost increases exponentially with the number of stretches (e.g.
   # a value of 20 is already extremely slow: approx. 60 seconds for 1 calculation).
   config.stretches = Rails.env.test? ? 1 : 12
-
-  # Set up a pepper to generate the hashed password.
-  # config.pepper = '148fce2ba4dbd8c3738a73fa678e31a7a712aa37ffc5fff48de4e39d68583bb872987a29af291741f6352c4795c37f70cff34b9b001891534a9bc75083337947'
-
   # Send a notification to the original email when the user's email is changed.
   # config.send_email_changed_notification = false
 
@@ -152,7 +147,6 @@ Devise.setup do |config|
   # Default is nil, meaning there is no restriction on how long a user can take
   # before confirming their account.
   # config.confirm_within = 3.days
-
   # If true, requires any email changes to be confirmed (exactly the same way as
   # initial account confirmation) to be applied. Requires additional unconfirmed_email
   # db field (see migrations). Until confirmed, new email is stored in
