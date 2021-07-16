@@ -108,7 +108,7 @@ The testing files are included in spec folders.
 ```
 - $ gem install rspec
 - $ rspec spec/*
-- $ 29 examples, 0 failures
+- $ 15 examples, 0 failures
 
 ```
 
