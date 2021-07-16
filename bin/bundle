@@ -7,9 +7,7 @@
 # The application 'bundle' is installed as part of a gem, and
 # this file is here to facilitate running it.
 #
-
 require 'rubygems'
-
 m = Module.new do
   module_function
 
@@ -57,7 +55,8 @@ m = Module.new do
     return unless File.file?(lockfile)
 
     lockfile_contents = File.read(lockfile)
-    return unless lockfile_contents =~ /\n\nBUNDLED WITH\n\s{2,}(#{Gem::Version::VERSION_PATTERN})\n/
+    return unless lockfile_contents =~
+                  /\n\nBUNDLED WITH\n\s{2,}(#{Gem::Version::VERSION_PATTERN})\n/
 
     Regexp.last_match(1)
   end

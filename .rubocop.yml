@@ -1,2 +1,11 @@
 Documentation:
   Enabled: false
+
+Metrics/BlockLength:
+  Exclude:
+    - db/schema.rb
+    - bin/bundle
+    - config/environments/development.rb
+    - config/initializers/devise.rb
+    - spec
+  Max: 100
