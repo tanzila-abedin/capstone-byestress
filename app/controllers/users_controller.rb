@@ -4,7 +4,8 @@ class UsersController < ApplicationController
   before_action :authenticate_user!
   
   def index
-  @users = User.all
+    #n+1 qurey
+  @users = User.all.includes(:following)
   end
 
   def new
