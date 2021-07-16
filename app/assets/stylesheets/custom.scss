@@ -1,8 +1,6 @@
-@import url("https://fonts.googleapis.com/css?family=Playfair+Display:700,900");;
+@import url("https://fonts.googleapis.com/css?family=Playfair+Display:700,900");
 
-
-
-$primary-color-dark: #51A5E6;
+$primary-color-dark: #51a5e6;
 $primary-color-light: #c7dfee;
 $primary-color-text: #212121;
 $divider-color: #bdbdbd;
@@ -68,7 +66,7 @@ a {
 }
 
 .content-box {
-  width: 100%
+  width: 100%;
 }
 
 :root {
@@ -103,34 +101,32 @@ a {
   margin-bottom: 1rem;
 }
 
-.form-label-group>input,
-.form-label-group>label {
+.form-label-group > input,
+.form-label-group > label {
   padding: var(--input-padding-y) var(--input-padding-x);
   height: auto;
   border-radius: 2rem;
 }
 
-.form-label-group>label {
+.form-label-group > label {
   top: 0;
   left: 0;
   display: block;
   width: 100%;
   margin-bottom: 0;
+
   /* Override default `<label>` margin */
   line-height: 1.5;
   color: #495057;
   cursor: text;
+
   /* Match the input under the label */
   border: 1px solid transparent;
-  border-radius: .25rem;
-  transition: all .1s ease-in-out;
+  border-radius: 0.25rem;
+  transition: all 0.1s ease-in-out;
 }
 
 .form-label-group input::-webkit-input-placeholder {
-  color: transparent;
-}
-
-.form-label-group input:-ms-input-placeholder {
   color: transparent;
 }
 
@@ -139,6 +135,10 @@ a {
 }
 
 .form-label-group input::-moz-placeholder {
+  color: transparent;
+}
+
+.form-label-group input:-ms-input-placeholder {
   color: transparent;
 }
 
@@ -151,13 +151,12 @@ a {
   padding-bottom: calc(var(--input-padding-y) / 3);
 }
 
-.form-label-group input:not(:placeholder-shown)~label {
+.form-label-group input:not(:placeholder-shown) ~ label {
   padding-top: calc(var(--input-padding-y) / 3);
   padding-bottom: calc(var(--input-padding-y) / 3);
   font-size: 12px;
   color: #777;
 }
-
 
 .title {
   text-align: center;
@@ -165,12 +164,11 @@ a {
   text-transform: capitalize;
 }
 
-
 .btn {
   font-size: 0.9em;
   margin: 0 0 8px 0;
   color: $primary-color-light;
-  background:  $primary-color-dark ;
+  background: $primary-color-dark;
   border: 1px gray solid;
   padding: 2px;
   border-radius: 5px;
@@ -197,7 +195,6 @@ a {
     color: white;
   }
 }
-
 
 .user-section {
   width: 100%;

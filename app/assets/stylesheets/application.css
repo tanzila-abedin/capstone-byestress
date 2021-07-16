@@ -14,8 +14,7 @@
  *= require_self
  */
 
-
- .sidebar-container {
+.sidebar-container {
   position: fixed;
   width: 227px;
   height: 100%;
@@ -26,25 +25,21 @@
   color: #fff;
 }
 
-.content-container {
-  padding-top: 20px;
-}
-
 .sidebar-logo {
   padding: 12px 15px 0.5px 30px;
   font-size: 18px;
-  background-color:  #51A5E6;
+  background-color: #51a5e6;
 }
 
 .sidebar-logo a {
-    color: #fff;
-    text-transform: uppercase;
-    font-weight: 900;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 900;
 }
 
- a:hover {
-   color: #c7dfee;
- }
+a:hover {
+  color: #c7dfee;
+}
 
 .sidebar-navigation {
   padding: 0;
@@ -58,10 +53,6 @@
   text-transform: uppercase;
   background-color: #fff;
   padding: 10px 15px 10px 30px;
-}
-
-.content-container {
-  padding-left: 220px;
 }
 
 .img-thumbnail {
@@ -78,18 +69,18 @@
 }
 
 .topbar {
-  height: 40px;  
-  background-color: #51A5E6; 
+  height: 40px;
+  background-color: #51a5e6;
 }
 
 .gravatar {
   margin-right: 10px;
   border-radius: 50%;
- } 
+}
 
 .gravatar_edit {
-   margin-top: 15px; 
-} 
+  margin-top: 15px;
+}
 
 .tweet-logo {
   color: #fff;
@@ -97,18 +88,15 @@
 }
 
 .grey-text {
-  color:rgb(155, 150, 150)
+  color: rgb(155, 150, 150);
 }
 
 .top-items {
-  color: #fff
+  color: #fff;
 }
 
 .top-items a {
-    color: #fff;
-    text-transform: uppercase;
-    font-weight: 900;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 900;
 }
- a:hover {
-   color: #c7dfee;
- }
