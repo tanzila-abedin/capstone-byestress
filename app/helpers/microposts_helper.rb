@@ -4,4 +4,15 @@ module MicropostsHelper
 
     content_tag :p, "Post could not be saved. #{post.errors.full_messages.join('. ')}", class: 'errors'
   end
+
+  def me?(user)
+    current_user == user
+  end
+
+   def follow?(other_user)
+    current_user.following.include?(other_user)
+    #!active_followings.find_by(followed_id: other_user.id).nil?  
+  end
+
+  
 end
