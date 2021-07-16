@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 module UsersHelper
   # return true if the user is logged  in or falsw otherwise.
   def logged_in?

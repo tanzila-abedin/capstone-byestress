@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class LikesController < ApplicationController
   def create
     micropost = Micropost.find_by(id: params[:format].to_i)
