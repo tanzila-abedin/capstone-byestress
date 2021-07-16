@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Micropost < ApplicationRecord
   belongs_to :user
   has_many :likes, dependent: :destroy
@@ -6,5 +8,4 @@ class Micropost < ApplicationRecord
 
   validates :content, presence: true, length: { maximum: 280,
                                                 too_long: '280 characters in post is the maximum allowed.' }
-
 end
