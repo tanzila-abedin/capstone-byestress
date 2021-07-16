@@ -1,10 +1,121 @@
-<% provide(:title, @user.fullname) %>
-<%= "name: #{@user.fullname}" %>
-    <section class="stats">
 
-    <%= render 'follow_form' if logged_in? %>
-    <% if @user.microposts.any? %>
-      <h3>Microposts (<%= @user.microposts.count %>)</h3>
+<div class="container-fluid">
+<div class="row">
+<div class="col-9">
+<%= image_tag "_LinkedIn Banner.png", class:"img-fluid" %>
+ 
+
+<% if @user.microposts.any? %>
+    <div class="card">
+      <h3>All Posts</h3> 
+      <% @user_post.each do |post| %>
+      <h5  class="card-header">  <%= link_to post.user.username, user_path(post.user), class: 'post-author' %></h5>
+     <div class="card-body">
+       <p class="card-text"><%= post.content %></p>
+       <% if like_post?(post) %>
+        <%= link_to "Dislike", like_path(post.id), method: :delete, class:"btn btn-primary" %>
+       <%else %>
+       <%= link_to "Like", likes_path(post.id), method: :post, class:"btn btn-primary" %>
+       <% end %>
+        <%= post.likers.count %>
+      </div>
+    <%end %>
+      <% else %> 
+       <div class="card">
+  <div class="card-header">
+  <h1>Post Something</h1>
+  </div>
+   <div class="card-body">
+    <blockquote class="blockquote mb-0">
+  <%= form_for(@micropost) do |form| %>
+  <%= form.label :content %>
+  <%= form.text_field :content, id: :post_content, class: 'form-control content-box', placeholder: 'Add New Post' %>
+  <%= display_errors(@micropost) %>
+  <%= form.submit 'Save', class: 'btn btn-primary' %>
+  <% end %>
+  </blockquote>
+  </div>
+  </div>
     <% end %>
+    </div>
+
+</div>
+    <div class="col">
+<div class="row">
+<div class="col d-flex justify-content-center">
+  <div class="row">
+  <div class="col d-flex align-items-center">
+  <div class= "rounded-border d-flex justify-content-center align-items-center">
+  <i class="fas fa-plus grey-text "></i>
+  </div>
+  </div>
+  <div class="col pt-2 ">
+  <%= gravatar_for @user%> 
+  </div>
+  <div class="col d-flex align-items-center">
+   <div class= "rounded-border  d-flex justify-content-center align-items-center">
+  <i class="fas fa-list-ul grey-text"></i>
+  </div>
+  </div>
+</div>
+</div>
+<div class="row">
+<div class="col text-center">
+ <h4><%= @user.fullname %></h4>
+  <h4 class="grey-text">@<%= @user.username %></h4>
+   <%= render 'follow_form' if logged_in? %>
+</div>
+</div>
+
+<div class="row pt-3">
+<div class="col-4 text-center p-0">
+<div class="stats-count">
+<%= @user.microposts.count %>
+<p class="grey-text"> Micropost</p>
+</div>
+</div>
+<div class="col-4 text-center p-0">
+<div class="stats-count rmv-border">
+<%= @user.followers.count %>
+<p class="grey-text"> Followers</p>
+</div>
+</div>
+<div class="col-4 text-center p-0">
+<div class="stats-count">
+<%= @user.following.count %>
+<p class="grey-text">Following</p>
+</div>
+</div>
+</div>
+
+<div class="row">
+<div class="col">
+<h5 class="pt-2">Followed by</h5>
+<hr>
+<% @users_followers.each do |follower| %>
+<div class="d-flex justify-content-between align-items-center p-1">
+<div class="d-flex align-items-center">
+<%= gravatar_for follower %> 
+<div class="p-0">
+ <span><%= link_to follower.fullname, user_path(follower.id)%></span>
+ <br>
+ <span class="grey-text">@<%= follower.username%></span>
+ </div>
+ </div>
+  <div class= "rounded-border d-flex justify-content-center align-items-center">
+  <i class="fas fa-list-ul grey-text"></i>
+  </div>
+ </div>
+<% end %>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+</div>
+
+
 
     
