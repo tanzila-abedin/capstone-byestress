@@ -13,7 +13,8 @@ class UsersController < ApplicationController
   def show
     @user = User.find_by(id: params[:id])
     @micropost = Micropost.new
-    @user_post = @user.microposts
+    #n+1 query
+    @user_post = @user.microposts.includes(:likers)
     @user_likes = @user.likes
     @users = @user.following
     @users_followers = @user.followers
