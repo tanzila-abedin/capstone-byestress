@@ -55,6 +55,10 @@ a:hover {
   padding: 10px 15px 10px 30px;
 }
 
+.side-width {
+  width: 14rem;
+}
+
 .img-thumbnail {
   padding: 0;
   border: 0;
