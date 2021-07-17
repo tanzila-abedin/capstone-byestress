@@ -9,10 +9,10 @@ class MicropostsController < ApplicationController
     @micropost = current_user.microposts.new(post_params)
 
     if @micropost.save
-    redirect_to root_path, notice: 'Post was successfully created.'
-    else 
+      redirect_to root_path, notice: 'Post was successfully created.'
+    else
       timeline_posts
-      redirect_to root_path, alert: 'Cannot create blank post.' 
+      redirect_to root_path, alert: 'Cannot create blank post.'
     end
   end
 
