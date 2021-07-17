@@ -7,8 +7,13 @@ class MicropostsController < ApplicationController
 
   def create
     @micropost = current_user.microposts.new(post_params)
-    @micropost.save
+
+    if @micropost.save
     redirect_to root_path, notice: 'Post was successfully created.'
+    else 
+      timeline_posts
+      redirect_to root_path, alert: 'Cannot create blank post.' 
+    end
   end
 
   def new; end
