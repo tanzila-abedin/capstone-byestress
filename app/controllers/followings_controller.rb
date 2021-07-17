@@ -1,5 +1,4 @@
 class FollowingsController < ApplicationController
-
   def create
     user = User.find(params[:following][:followed_id])
     current_user.follow(user)
@@ -15,8 +14,9 @@ class FollowingsController < ApplicationController
   private
 
   def logged_in_user
-     return flash[:danger] = 'Please log in.'  unless logged_in?
-      redirect_to login_url
+    return flash[:danger] = 'Please log in.' unless logged_in?
+
+    redirect_to login_url
   end
 
   def logged_in?
