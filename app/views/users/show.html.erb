@@ -22,22 +22,22 @@
     <%end %>
       <% else %> 
        <div class="card">
-  <div class="card-header">
-  <h1>Post Something</h1>
-  </div>
-   <div class="card-body">
-    <blockquote class="blockquote mb-0">
-  <%= form_for(@micropost) do |form| %>
-  <%= form.label :content %>
-  <%= form.text_field :content, id: :post_content, class: 'form-control content-box', placeholder: 'Add New Post' %>
-  <%= display_errors(@micropost) %>
-  <%= form.submit 'Save', class: 'btn btn-primary' %>
-  <% end %>
-  </blockquote>
-  </div>
-  </div>
+          <div class="card-header">
+            <h1>Post Something</h1>
+          </div>
+          <div class="card-body">
+           <blockquote class="blockquote mb-0">
+            <%= form_for(@micropost) do |form| %>
+            <%= form.label :content %>
+            <%= form.text_field :content, id: :post_content, class: 'form-control content-box', placeholder: 'Add New            Post' %>
+            <%= display_errors(@micropost) %>
+            <%= form.submit 'Save', class: 'btn btn-primary' %>
+           <% end %>
+          </blockquote>
+         </div>
+       </div>
     <% end %>
-    </div>
+  </div>
 
 </div>
     <div class="col">
