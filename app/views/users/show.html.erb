@@ -1,13 +1,13 @@
 
-<div class="container-fluid">
+<div class="container-fluid bg-light">
 <div class="row">
   <div class="col-9">
     <%= image_tag "_LinkedIn Banner.png", class:"img-fluid" %>
  
 
     <% if @user.microposts.any? %>
-   <div class="card">
-            <h3>All Posts</h3> 
+   <div class="card  border-0">
+            <h4 class="timeline-post p-2">All Tweets</h4> 
             <% @user_post.each do |post| %>
             <h5  class="card-header">  <%= link_to post.user.username, user_path(post.user), class: 'post-author'       %></h5>
            <div class="card-body">

@@ -1,11 +1,11 @@
 
-<div class="container-fluid">
+<div class="container-fluid bg-light">
 
   <div class="row">
   <div class="col-9">
   <div class="card">
   <div class="card-header">
-  <h1>Post Something</h1>
+  <strong><h4 class="grey-text">TWEET SOMETHING</h4></strong>
   </div>
    <div class="card-body">
     <blockquote class="blockquote mb-0">
@@ -18,9 +18,8 @@
   </blockquote>
   </div>
   </div>
-  <h3>
-    Recent posts
-  </h3>
+  <h5 class="timeline-post p-2"> <%= @timeline_posts.count %> new post</h5>
+  <hr>
   <ul class="posts">
     <%= render 'microposts/homepage_post' %>
   </ul>
@@ -31,7 +30,7 @@
  <div class="col">
   <div class="row">
     <div class="col">
-      <h4 class="text-center">Who to follow</h4>
+      <h5 class="text-center grey-text p-2">WHO TO FOLLOW</h5>
       <hr>
       <% @users.each do |user| %>
         <% unless follow?(user) ||  me?(user) %>

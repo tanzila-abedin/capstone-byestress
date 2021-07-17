@@ -6,11 +6,8 @@ module UsersHelper
   end
 
   def logged_in_user
-    unless logged_in?
-
-      flash[:danger] = 'Please log in.'
-      redirect_to login_url
-    end
+    retrun flash[:danger] = 'Please log in.' unless logged_in?
+    redirect_to login_url
   end
 
   def logged_in?
