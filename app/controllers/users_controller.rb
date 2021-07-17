@@ -22,22 +22,6 @@ class UsersController < ApplicationController
 
   private
 
-  def logged_in_user
-    unless logged_in?
-
-    flash[:danger] = 'Please log in.'
-    redirect_to login_url
-    end
-  end
-
-  def logged_in?
-    !current_user.nil?
-  end
-
-  def me?(user)
-    current_user == user
-  end
-
   def user_params
     params.require(:user).permit(:username, :fullname, :email)
   end
