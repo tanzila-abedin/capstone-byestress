@@ -23,25 +23,26 @@ This project is built for the Ruby on Rails capstone which is based on a redesig
  It is a web application to share opinions about ways developers can overcome their daily stress.
 
 ## Screenshot Test
+
+## Sign Up
+<p align="center">
+  <img height="auto" src="app/assets/images/Signup.png">
+</p>
+
 ## Log In
 <p align="center">
-  <img height="auto" src="">
+  <img height="auto" src="app/assets/images/login.png">
 </p>
 
 ## Index page
 
 <p align="center">
-  <img height="auto" src="">
+  <img height="auto" src="app/assets/images/homepage.png">
 </p>
 
 ## User page
 <p align="center">
-  <img height="auto" src="">
-</p>
-
-## Edit User
-<p align="center">
-  <img height="auto" src="">
+  <img height="auto" src="app/assets/images/profilepage.png">
 </p>
 
 ## Live Demo
