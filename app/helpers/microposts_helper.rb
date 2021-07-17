@@ -12,16 +12,4 @@ module MicropostsHelper
   def follow?(other_user)
     current_user.following.include?(other_user)
   end
-
-  # def tanzila
-  #   @my_posts = current_user.microposts
-  #   @friends = Following.where(follower_id: current_user.id)
-
-  #   @my_friends_posts = []
-  #   # n+1 query
-  #   @friends.includes(:follower).each do |friendship|
-  #     user = User.find_by(id: friendship.followed_id)
-  #     @my_friends_posts << user.microposts
-  #   end
-  # end
 end
