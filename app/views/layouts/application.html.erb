@@ -14,18 +14,9 @@
    <body>
       <div class="container-fluid">
          <div class="row">
-         <% if notice.present? %>
-            <div class="notice">
-            <p> <%= notice %> </p>
-            </div>
-            <% end %>
-            <% if alert.present? %>
-            <div class="alert">
-            <p> <%= alert %> </p>
-            </div>
-            <% end %>
+
             <div class="col-2">
-                  <% if user_signed_in? %> 
+             <% if user_signed_in? %> 
                   <div class="sidebar-container">
                      <div class="sidebar-logo">
                         <%= link_to 'Bye Stress', root_path %> 
@@ -59,13 +50,24 @@
                        <%= render 'layouts/sidebar' %></i>
                         </li>
                   </div>
-            </div>
+              </div>
+
             <div class="col">
-            <div class="row">
-            <div class="col p-0">
-            <%= render 'layouts/topbar' %>
-            <% end %>
+               <div class="row">
+               <div class="col p-0">
+               <%= render 'layouts/topbar' %>
+               <% end %>
             </div>
+            <% if notice.present? %>
+            <div class="notice">
+            <p> <%= notice %> </p>
+            </div>
+            <% end %>
+            <% if alert.present? %>
+            <div class="alert">
+            <p> <%= alert %> </p>
+            </div>
+            <% end %>
             </div>
             <%= yield %>
             </div>
