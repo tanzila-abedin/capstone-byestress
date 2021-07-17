@@ -19,7 +19,8 @@
 
 <!-- ABOUT THE PROJECT   -->
 ## About The Project
-
+This project is built for the Ruby on Rails capstone which is based on a redesign of Twitter.
+ It is a web application to share opinions about ways developers can overcome their daily stress.
 
 ## Screenshot Test
 ## Log In
@@ -45,9 +46,7 @@
 
 ## Live Demo
 
-- [Live Demo Link]()
-
-- [Video](https://)
+- [Live Demo Link](https://protected-sea-41317.herokuapp.com/)
 
 ## Contributing
 
