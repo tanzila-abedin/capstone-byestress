@@ -67,7 +67,7 @@ Terminal or similar to execute the program.
 
 - To get a local copy up and running follow these simple example steps.
 - Clone this repository with git clone ```https://github.com/tanzila-abedin/capstone-byestress.git``` using your terminal or command line.
-- Change to the project directory by entering: ```cd Rails-Tweet-Rede``` in the terminal.
+- Change to the project directory by entering: ```cd capstone-byestress``` in the terminal.
 
 ## How to use the Bye-stress app
 1. run the command ```bundle install```   This will install the required dependencies
