@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
   end
 
   def posts_for_all
-     # n+1 query
+    # n+1 query
     @my_posts = current_user.microposts.includes(:user)
     @friends = Following.includes(:follower).where(follower_id: current_user.id)
 

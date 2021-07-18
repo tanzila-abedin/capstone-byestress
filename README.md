@@ -112,11 +112,6 @@ The testing files are included in spec folders.
 
 ```
 
-<p align="center">
-  <img height="auto" src="app/assets/images/rspec.png">
-</p>
-
-
 👤 **Tanzila**
 
 ![Tanzila's GitHub stats](https://github-readme-stats.vercel.app/api?username=tanzila-abedin&count_private=true&theme=dark&show_icons=true)
