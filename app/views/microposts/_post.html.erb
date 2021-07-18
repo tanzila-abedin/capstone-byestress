@@ -1,0 +1,14 @@
+<div class="card border-0">
+<div class="card-body">
+  <h5 class="card-title"> 
+  <%= link_to micropost.user.username, user_path(micropost.user)%> </h5>
+   <p class="card-text"><%= micropost.content %> </p>
+      <% if like_post?(micropost) %>
+        <%= link_to "Dislike", like_path(micropost.id), method: :delete, class:"btn btn-primary" %>
+       <%else %>
+       <%= link_to "Like", likes_path(micropost.id), method: :post, class:"btn btn-primary" %>
+       <% end %>
+        <p><%= micropost.likers.count %></p>
+  </div>
+</div>
+

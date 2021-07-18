@@ -1,0 +1,16 @@
+ <div class="sidebar column border-top ">
+  <div class="profile-links">
+   <div class="p-3">
+   <i class="fas fa-home"></i>
+    <%= link_to "HOMEPAGE", root_path, class: "top-items" %>
+   </div>
+   <div class="p-3">
+   <i class="fas fa-user"></i>
+    <%= link_to "PROFILE", user_path(current_user.id), method: :get, class: "top-items" %>
+   </div>
+   <div class="p-3">
+   <i class="fas fa-user"></i>
+     <%= link_to "SIGNOUT", destroy_user_session_path, method: :delete, class: "top-items"%>
+   </div>
+  </div>
+ </div>

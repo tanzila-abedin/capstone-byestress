@@ -1,0 +1,14 @@
+<% @timeline_posts.each do |post| %>
+
+  <% if post.class != Micropost %>
+    <% posts = post %>
+
+    <% posts.each do |post| %> 
+      <%= render 'microposts/post', micropost: post %>
+    <% end %>
+
+  <% else %>
+      <%= render 'microposts/post', micropost: post %>
+  <% end %>
+  
+<% end %>
