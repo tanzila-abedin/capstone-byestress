@@ -14,7 +14,7 @@ class UsersController < ApplicationController
     @user = User.find_by(id: params[:id])
     @micropost = Micropost.new
     # n+1 query
-    @user_post = @user.microposts.includes(:likers)
+    @user_post = @user.microposts.includes(:user, :likers)
     @user_likes = @user.likes
     @users = @user.following
     @users_followers = @user.followers

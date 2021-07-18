@@ -14,12 +14,12 @@ class ApplicationController < ActionController::Base
   end
 
   def posts_for_all
-    @my_posts = current_user.microposts
-    @friends = Following.where(follower_id: current_user.id)
+     # n+1 query
+    @my_posts = current_user.microposts.includes(:user)
+    @friends = Following.includes(:follower).where(follower_id: current_user.id)
 
     @my_friends_posts = []
-    # n+1 query
-    @friends.includes(:follower).each do |friendship|
+    @friends.each do |friendship|
       user = User.find_by(id: friendship.followed_id)
       @my_friends_posts << user.microposts
     end
